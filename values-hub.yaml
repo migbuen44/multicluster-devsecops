@@ -5,7 +5,7 @@ clusterGroup:
 # Namespaces that are expected to be created.
 # The pattern will apply these namespaces
 # and creates an operator group for that namespace
-p
+
   namespaces:
   - open-cluster-management
   - vault
