@@ -5,6 +5,7 @@ clusterGroup:
 # Namespaces that are expected to be created.
 # The pattern will apply these namespaces
 # and creates an operator group for that namespace
+p
   namespaces:
   - open-cluster-management
   - vault
@@ -15,6 +16,7 @@ clusterGroup:
   - devsecops-ci
   - openshift-storage
   - quay-enterprise
+  - dynatrace
 
 #  subscriptions:  OpenShift Operator subscriptions from OLM/OperatorHub
 #  - name: the Operator package name (required)
@@ -43,7 +45,13 @@ clusterGroup:
     quay:
       name: quay-operator
       namespace: openshift-operators
-#      channel: 
+#      channel:
+
+    dynatrace:
+      name: dynatrace-operator
+      namespace: openshift-operators
+#      channel: alpha
+      source: certified-operators 
 
 # The following section is used by
 # OpenShift GitOps (ArgoCD)
@@ -123,6 +131,12 @@ clusterGroup:
       namespace: openshift
       project: hub
       path: charts/hub/cli-tools
+
+    observability:
+      name: observability
+      namespace: dynatrace
+      project: hub
+      path: charts/hub/dynatrace
 
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
