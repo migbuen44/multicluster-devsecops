@@ -49,7 +49,7 @@ p
 
     dynatrace:
       name: dynatrace-operator
-      namespace: openshift-operators
+      namespace: dynatrace
 #      channel: alpha
       source: certified-operators 
 
