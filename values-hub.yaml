@@ -132,11 +132,11 @@ clusterGroup:
       project: hub
       path: charts/hub/cli-tools
 
-#    observability:
- #     name: observability
-  #    namespace: dynatrace
-   #   project: hub
-    #  path: charts/hub/dynatrace
+    observability:
+      name: observability
+      namespace: dynatrace
+      project: hub
+      path: charts/hub/dynatrace
 
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
