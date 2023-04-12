@@ -4,7 +4,7 @@ metadata:
   name: devsecops-rh-v2
 spec:
   params:
-  - default: https://{{ .Values.global.app.petclinic.repo }}
+  - default: {{ .Values.global.app.petclinic.repo }}
     description: The application git repository
     name: APP_SOURCE_GIT
     type: string
@@ -12,7 +12,7 @@ spec:
     description: The application git revision
     name: APP_SOURCE_REVISION
     type: string
-  - default: https://{{ .Values.global.app.petclinic.configRepo }} 
+  - default: {{ .Values.global.app.petclinic.configRepo }} 
     description: The application manifests git repository
     name: APP_MANIFESTS_GIT
     type: string
