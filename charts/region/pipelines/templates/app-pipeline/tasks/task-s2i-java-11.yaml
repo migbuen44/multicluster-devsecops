@@ -70,6 +70,9 @@ spec:
         - mountPath: /env-params
           name: envparams
       workingDir: /env-params
+      securityContext:
+        capabilities:
+          add: ["SETFCAP"]
     - command:
         - s2i
         - build
@@ -91,6 +94,9 @@ spec:
         - mountPath: /env-params
           name: envparams
       workingDir: $(workspaces.source.path)
+      securityContext:
+        capabilities:
+          add: ["SETFCAP"]
     - command:
         - buildah
         - bud
@@ -129,6 +135,9 @@ spec:
       volumeMounts:
         - mountPath: /var/lib/containers
           name: varlibcontainers
+      securityContext:
+        capabilities:
+          add: ["SETFCAP"]
     - command:
         - buildah
         - push
@@ -157,3 +166,6 @@ spec:
   workspaces:
     - mountPath: /workspace/source
       name: source
+      securityContext:
+        capabilities:
+          add: ["SETFCAP"]
