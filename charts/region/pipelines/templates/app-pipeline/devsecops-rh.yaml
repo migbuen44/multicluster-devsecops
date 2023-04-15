@@ -198,9 +198,10 @@ spec:
     - name: image
       value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
     - name: rox_api_token
-      value: roxsecrets
-    - name: rox_central_endpoint
-      value: roxsecrets
+      value: acs-api-token
+# jrickard removed
+#    - name: rox_central_endpoint
+#      value: roxsecrets
     - name: image_digest
       value: $(tasks.build-image.results.IMAGE_DIGEST)
     runAfter:
@@ -213,9 +214,10 @@ spec:
     - name: GIT_REPOSITORY
       value: $(params.APP_MANIFESTS_GIT)
     - name: rox_api_token
-      value: roxsecrets
-    - name: rox_central_endpoint
-      value: roxsecrets
+      value: acs-api-token
+# jrickard removed
+#    - name: rox_central_endpoint
+#      value: roxsecrets
     - name: file
       value: deployment.yaml
     - name: deployment_files_path
