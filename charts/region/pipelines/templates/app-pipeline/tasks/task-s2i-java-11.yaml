@@ -40,7 +40,6 @@ spec:
       name: IMAGE_TAG
       type: string
       default: "latest"
-
   results:
   - name: IMAGE_DIGEST
     description: Digest of the image just built.
@@ -153,6 +152,9 @@ spec:
       volumeMounts:
         - mountPath: /var/lib/containers
           name: varlibcontainers
+      securityContext:
+        capabilities:
+          add: ["SETFCAP"]
     - name: digest-to-results
       image: registry.redhat.io/rhel8/buildah@sha256:180c4d9849b6ab0e5465d30d4f3a77765cf0d852ca1cb1efb59d6e8c9f90d467
       script: cat $(workspaces.source.path)/image-digest | tee /tekton/results/IMAGE_DIGEST
@@ -166,6 +168,3 @@ spec:
   workspaces:
     - mountPath: /workspace/source
       name: source
-      securityContext:
-        capabilities:
-          add: ["SETFCAP"]
