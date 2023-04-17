@@ -116,6 +116,7 @@ spec:
   - args:
     - |-
       buildah from --storage-driver=vfs --tls-verify=$(params.TLSVERIFY) '$(params.IMAGE_NAME):$(params.IMAGE_TAG)' > imgname
+      buildah run --user=root --storage-driver=vfs `cat imgname` -- sh -c `dnf update -y`
       buildah run --user=root --storage-driver=vfs `cat imgname` -- sh -c 'rpm -e $(rpm -qa *dnf*) $(rpm -qa *libsolv*) $(rpm -qa *hawkey*) $(rpm -qa yum*) $(rpm -qa *dnf*) $(rpm -qa *subscription-manager*)'
       buildah run --user=root --storage-driver=vfs `cat imgname` -- sh -c 'rpm -e $(rpm -qa *rpm*)'
       buildah commit --storage-driver=vfs --tls-verify=$(params.TLSVERIFY) `cat imgname` '$(params.IMAGE_NAME):$(params.IMAGE_TAG)'
