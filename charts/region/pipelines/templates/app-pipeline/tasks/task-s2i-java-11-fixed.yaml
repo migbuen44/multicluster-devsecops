@@ -132,7 +132,7 @@ spec:
     - mountPath: /gen-source
       name: gen-source
     workingDir: /gen-source
-    securityContet:
+    securityContext:
       capabilities:
         add: ["SETFCAP"]
 
