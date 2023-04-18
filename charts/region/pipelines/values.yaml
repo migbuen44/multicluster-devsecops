@@ -9,6 +9,9 @@ global:
   repoURL: "https://github.com/<git-fork>/multicluster-devsecops"
   targetRevision: main
 
+  cicd:
+    namespace: devsecops-ci
+
   git:
     hostname: github.com
     account: PLAINTEXT
