@@ -36,17 +36,15 @@ spec:
     name: GIT_PASSWORD
     type: string
     default: openshift
-  ## commented out by jrickard
-  #- description: Copy FROM path
-  #  name: FROM_PATH
-  #  type: string
-  #  default: from
-  #- description: Copy TO path
-  #  name: TO_PATH
-  #  type: string
-  #  default: to
-  ##
-  tasks:
+  - description: Copy FROM path
+    name: FROM_PATH
+    type: string
+    default: environments/dev
+  - description: Copy TO path
+    name: TO_PATH
+    type: string
+    default: environments/staging
+    tasks:
   - name: create-promote-pull-request
     params:
       - name: GIT_REPOSITORY
@@ -55,10 +53,10 @@ spec:
         value: $(params.GIT_USERNAME)
       - name: GIT_PASSWORD
         value: $(params.GIT_PASSWORD)
-      #- name: COPY_FROM_PATH
-      #  value: $(params.FROM_PATH)
-      #- name: COPY_TO_PATH
-      #  value: $(params.TO_PATH)
+      - name: COPY_FROM_PATH
+        value: $(params.FROM_PATH)
+      - name: COPY_TO_PATH
+        value: $(params.TO_PATH)
     runAfter:
       - pentesting-test
       - performance-test
