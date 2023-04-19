@@ -44,7 +44,7 @@ spec:
     name: TO_PATH
     type: string
     default: environments/staging
-    tasks:
+  tasks:
   - name: create-promote-pull-request
     params:
       - name: GIT_REPOSITORY
