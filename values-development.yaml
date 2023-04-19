@@ -146,7 +146,7 @@ clusterGroup:
       name: dev-spring-petclinic
       namespace: devsecops-dev
       project: spring-petclinic
-      path: charts/region/development/spring-petclinic-config
+      path: charts/region/spring-petclinic-config
 
 #  To have apps in multiple flavors, use namespaces and use helm overrides as appropriate
 #
