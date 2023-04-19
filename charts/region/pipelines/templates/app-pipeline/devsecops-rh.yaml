@@ -55,10 +55,10 @@ spec:
         value: $(params.GIT_USERNAME)
       - name: GIT_PASSWORD
         value: $(params.GIT_PASSWORD)
-      - name: COPY_FROM_PATH
-        value: $(params.FROM_PATH)
-      - name: COPY_TO_PATH
-        value: $(params.TO_PATH)
+      #- name: COPY_FROM_PATH
+      #  value: $(params.FROM_PATH)
+      #- name: COPY_TO_PATH
+      #  value: $(params.TO_PATH)
     runAfter:
       - pentesting-test
       - performance-test
