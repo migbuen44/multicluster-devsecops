@@ -265,7 +265,7 @@ spec:
     - name: deleteExisting
       value: "true"
     runAfter:
-    - wait-application
+    - update-deployment
     taskRef:
       kind: ClusterTask
       name: git-clone
