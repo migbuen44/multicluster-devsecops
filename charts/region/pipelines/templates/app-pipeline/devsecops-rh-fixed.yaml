@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: devsecops-rh-v2
+  name: devsecops-rh-v2-fixed
 spec:
   params:
   - default: {{ .Values.global.app.petclinic.repo }}
