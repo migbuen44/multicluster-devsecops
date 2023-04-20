@@ -9,6 +9,9 @@ global:
   repoURL: "https://github.com/<git-fork>/multicluster-devsecops"
   targetRevision: main
 
+  clusterGroup:
+    name: devel
+
   cicd:
     namespace: devsecops-ci
 
