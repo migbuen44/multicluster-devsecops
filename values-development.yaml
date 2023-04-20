@@ -22,7 +22,7 @@ global:
     crdaImage: quay.io/hybridcloudpatterns/crda-image:0.1
     petclinic:
       repo: https://github.com/day0hero/spring-petclinic
-      configRepo: https://github.com/hybrid-cloud-demos/spring-petclinic-config
+      configRepo: https://github.com/day0hero/spring-petclinic-config
       image: quay.io/hybridcloudpatterns/spring-petclinic:latest
 
   git:
