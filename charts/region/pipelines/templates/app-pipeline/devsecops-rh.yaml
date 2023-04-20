@@ -256,15 +256,6 @@ spec:
     workspaces:
     - name: workspace
       workspace: workspace
-  - name: wait-application
-    params:
-    - name: application-name
-      value: dev-spring-petclinic
-    runAfter:
-    - update-deployment
-    taskRef:
-      kind: Task
-      name: argocd-task-sync-and-wait
   - name: perf-tests-clone
     params:
     - name: url
