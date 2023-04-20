@@ -167,7 +167,8 @@ spec:
     - name: PATH_CONTEXT
       value: spring-petclinic/target
     - name: IMAGE_NAME
-      value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
+      #jrickard - value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
+      value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/{{ .Values.global.clusterGroup.name }}/spring-petclinic
     - name: IMAGE_TAG
       value: $(params.APP_IMAGE_TAG)
     runAfter:
@@ -181,7 +182,8 @@ spec:
   - name: image-scan
     params:
     - name: image
-      value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
+      #jrickard - value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
+      value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/{{ .Values.global.clusterGroup.name }}/spring-petclinic
     - name: rox_api_token
       value: acs-api-token
     - name: output_format
@@ -196,7 +198,8 @@ spec:
   - name: image-check
     params:
     - name: image
-      value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
+      #jrickard - value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
+      value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/{{ .Values.global.clusterGroup.name }}/spring-petclinic
     - name: rox_api_token
       value: acs-api-token
 # jrickard removed
@@ -241,7 +244,8 @@ spec:
     - name: CURRENT_IMAGE
       value: {{ .Values.global.app.petclinic.image }}
     - name: NEW_IMAGE
-      value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
+      #jrickard-value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/openshift_{{ .Values.devel.namespace }}/spring-petclinic
+      value: quay-registry-quay-quay-enterprise.{{ .Values.global.hubClusterDomain }}/{{ .Values.global.clusterGroup.name }}/spring-petclinic
     - name: NEW_DIGEST
       value: $(tasks.build-image.results.IMAGE_DIGEST)
     - name: KUSTOMIZATION_PATH
