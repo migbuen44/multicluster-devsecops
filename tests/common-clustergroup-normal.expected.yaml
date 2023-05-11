@@ -856,6 +856,11 @@ metadata:
   annotations:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
+<<<<<<< HEAD
+=======
+# Adding health checks to argocd to prevent pvc resources
+# that aren't bound state from blocking deployments
+>>>>>>> jonny-upstream/main
   resourceCustomizations: |
     PersistentVolumeClaim:
       health.lua: |

@@ -1,4 +1,20 @@
 ---
+# Source: pipelines/templates/app-pipeline/rbac/pipeline-sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+imagePullSecrets:
+- name: image-registry-credentials
+metadata:
+  name: pipeline
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/syncOptions: ServerSideApply=true
+secrets:
+  - name: quay-api-token
+  - name: acs-api-token
+  - name: git-secret
+  - name: quay-pull-secret
+---
 # Source: pipelines/templates/app-pipeline/rbac/registry-credential-sa.yaml
 apiVersion: v1
 kind: ServiceAccount
